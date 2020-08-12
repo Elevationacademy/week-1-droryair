@@ -95,3 +95,83 @@
 
 
 //EXERCISE 8 -- EXTENSION
+
+
+
+
+
+
+
+// //MINI LESSON 1
+//// link: https://kernel.elevation.ac/cohorts/53/lessons/109/learn/activity/2
+// people_info = [
+//     {
+//       name: "guido",
+//       profession: "bungalow builder",
+//       age: 17,
+//       country: "canaland",
+//       city: "sydurn",
+//       catchphrase: "what a piece of wood!"
+//     },
+//     {
+//       name: "petra",
+//       profession: "jet plane mechanic",
+//       age: 31,
+//       country: "greenmark",
+//       city: "bostork",
+//       catchphrase: "that's my engine, bub"
+//     },
+//     {
+//       name: "damian",
+//       profession: "nursery assistant",
+//       age: 72,
+//       country: "zimbia",
+//       city: "bekyo",
+//       catchphrase: "with great responsibility comes great power"
+//     }
+//   ]
+  
+//   const getSummary = function(person){
+//     let summary = "Meet "//modify the summary string with the person parameterreturn summary
+//     summary += capitalize(person.name)
+//     //more modifications to comereturn summary
+//     summary += `. ${getAge(person.age)}, ` //Yes - you can put a function call inside the tick quotes!
+//     summary += `And heir profession is ${capitalize(person.profession)}.`//call function for profession
+//     summary += `They live in ${capitalize(person.city)}, ${capitalize(person.country)},` //call function for country + city
+//     summary += `And their favorite catchphrase is: "${capitalize(person.catchphrase)}"`//call function for catchphrasereturn summary
+//     return summary
+//   }
+//   const capitalize = function(str){
+//     let capitalizedStr = ""
+//     capitalizedStr += str[0].toUpperCase(); //add the first letter of the str, capitalized
+//     capitalizedStr += str.slice(1) //add the rest of str normallyreturn capitalizedStr
+//     return capitalizedStr
+//   }
+//   const getAge = function(age){
+//     if (age >= 21 && age <55){
+//         return (`They are ${age} years old`)
+//     } else if (age <21 ){
+//         return ('They are underaged')
+//     }else {
+//         return ('they are 55+ years old')
+//     }
+//   }
+// // console.log(getSummary(people_info[0]))
+// for ( person of people_info){
+//     console.log(getSummary(person))
+// }
+  
+
+
+// // MINI LESSON 2
+// // link: https://kernel.elevation.ac/cohorts/53/lessons/109/apply/activity/3
+// const story = "In the beginning there was light. Then there were wolves. Finally there was a big fire. Ultimately, Shelob the wolf-master put out the fire with her feet. But until then, the fire caused one heck of a lot of damage."
+// const specialChars = [",", ".", "'", '"',"?", "!", ";"]
+// const wordCounts = {}
+
+
+
+
+
+
+
