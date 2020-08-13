@@ -1,0 +1,21 @@
+#boxy{
+    background-color: #1abc9c;
+    line-height:20px;
+    text-align:middle;
+    width: 150px;
+    padding: 20px;
+}
+#items-list {
+        color: red ;
+        display: inline-block;
+}
+#box{
+    font-size: 30px;
+    display: inline-block;
+}
+#box2div{
+    /* background-color: black; */
+    width : 100px;
+    height:20px
+
+}
