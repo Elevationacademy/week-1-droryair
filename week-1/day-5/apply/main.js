@@ -1,4 +1,4 @@
-// //BACK TO RESERVATION
+// //EXERCISE - BACK TO RESERVATION
 // //link: https://kernel.elevation.ac/cohorts/53/lessons/55/apply/activity/15
 
 // //DOM:
@@ -44,131 +44,224 @@
 
 
 
-// //EXERCISE - VISUAL OVERLOAD
+//EXERCISE - VISUAL OVERLOAD
 
-// // creating a color generator:
-// const randColor = function(){
-//     let letters = '0123456789ABCDEF'
-//     let color = '#'
-//     let string =''
-//     for (i=0;i<6;i++){
-//        string += letters[Math.floor(Math.random()*16)]
-//     }
-//     return (color+string)
-// }
-
-
-// // creating continer variable for easier access:
-// const container = document.getElementById("container")
-// container.style.height = '60px'
-
-// // creating 6 boxes
-// for (let i=0;i<6;i++){
-//     //creating box Element + bs variables for easiear access:
-//     const boxElem = document.createElement("div")
-//     const bs = boxElem.style
-//     boxElem.setAttribute('class','box')
-//     bs.backgroundColor = randColor()
-//     boxElem.onmouseover = function(){
-//         bs.backgroundColor = randColor()
-//     }
-//     container.appendChild(boxElem)
-// }
+// creating a color generator:
+const randColor = function(){
+    let letters = '0123456789ABCDEF'
+    let color = '#'
+    let string =''
+    for (i=0;i<6;i++){
+       string += letters[Math.floor(Math.random()*16)]
+    }
+    return (color+string)
+}
 
 
+// creating continer variable for easier access:
+const container = document.getElementById("container")
+container.style.height = '60px'
+
+// creating 6 boxes
+for (let i=0;i<6;i++){
+    //creating box Element + bs variables for easiear access:
+    const boxElem = document.createElement("div")
+    const bs = boxElem.style
+   // creating a specific id for each box
+    let id = 'box' + (i+1)
+    boxElem.setAttribute('id',id)
+    boxElem.setAttribute('class','box')
+    bs.backgroundColor = randColor()
+    // onmouseover listener for each box
+    boxElem.onmouseover = function(){
+        bs.backgroundColor = randColor()
+        checkColors()
+    }
+    container.appendChild(boxElem)
+}
 
 
-//EXERCISE - FORM
-//accessing the main div:
-const div = document.getElementById("form")
+// EXTENSION EXERCISE
+function checkColors(){
+    if (document.getElementById('box1').style.backgroundColor == document.getElementById('box2').style.backgroundColor){
+        if(document.getElementById('box2').style.backgroundColor ==document.getElementById('box3').style.backgroundColor){
+            if(document.getElementById('box3').style.backgroundColor== document.getElementById('box4').style.backgroundColor){
+                if( document.getElementById('box4').style.backgroundColor==document.getElementById('box5').style.backgroundColor){
+                    if (document.getElementById('box5').style.backgroundColor==document.getElementById('box6').style.backgroundColor){
+                        const congrats = document.createElement('h3')
+                        congrats.innerHTML = "Nice job!"
+                        container.appendChild(congrats)
+                        return
+                    }
+                }
+            }
+        }
+    }
+}
 
-/*creating all of the input fields,headlines and returning values(
-    name - characters only (min 2chars)
-    desired salary - numbers only (greater than 10,000 but less than 16,000)
-    birthday - date type (can't be null)
-    phone - numbers only (10 digits)
-    ): */
+
+
+
+// //EXERCISE - FORM
+// //accessing the form's div:
+// const form = document.getElementById("form")
+
+// //accessing the errors' div
+// const errors = document.getElementById("errors")
+
+// /*creating all of the input fields,headlines and returning values(
+//     name - min 2 characters
+//     desired salary - numbers only (greater than 10,000 but less than 16,000)
+//     birthday - date type (can't be null)
+//     phone - numbers only (10 digits long)
+//     ): 
+
+//     general form:
+//     -creating and managing headline and input field
+//     -creating a 'get' function:
+//         -creating a new error element ('h4')
+//         -managing errors
+//         -managing return value
+
+//     < end of input managment in line 215 >
+//     < onclick function in line 222 >
+//     */
     
-    //name:
-    const nameHead = document.createElement ("h2")
-    nameHead.innerHTML = "Name"
-    const nameInput = document.createElement ("input")
-                div.appendChild(nameHead)
-                div.appendChild(nameInput)
-    const getName = function(){
-        let nameErr = document.createElement("h4")
-        nameErr.style.color = 'red'
-        // console.log()
-        if (!nameInput.value){
-            nameErr.innerHTML = "Please enter a name"
-        } else if(nameInput.value.length  <= 2){
-            nameErr.innerHTML = "Name is too short"
-        }
-        if (nameErr.innerHTML){
-            console.log("nameError = true")
-            div.appendChild(nameErr)
-            return
-        }else {
-            return nameInput.value
-        }
-    }
+//     //name:
+//     const nameHead = document.createElement ("h3")
+//     nameHead.innerHTML = "Name"
+//     nameHead.style.margin = '5px'
+//     const nameInput = document.createElement ("input")
+//                 form.appendChild(nameHead)
+//                 form.appendChild(nameInput)
+//     const getName = function(){
+//         let nameErr = document.createElement("h4")
+//         nameErr.style.color = 'red'
+
+//         //managing errors:
+//         if (!nameInput.value){
+//             nameErr.innerHTML = "Please enter a name"
+//         } else if(nameInput.value.length  <= 2){
+//             nameErr.innerHTML = "Name is too short"
+//         }
+
+//         // managing return value:
+//         if (nameErr.innerHTML){
+//             errors.appendChild(nameErr)
+//             return
+//         }else {
+//             return nameInput.value
+//         }
+//     }
 
 
 
-    //salay:
-    const salartHead = document.createElement("h2")
-    salartHead.innerHTML = "Desired Salay"
-    const salaryInput = document.createElement("input")
-            div.appendChild(salartHead)
-            div.appendChild(salaryInput)
-    const getSalary  = function(){
-        const salaryErr = document.createElement("h4")
-        salaryErr.style.color = 'red' 
-        if (salaryInput.value <10000 || salaryInput <16000){
-            salaryErr.innerHTML = "Salary should be between 10,000 and 16,000"
-        }
-        if(salaryErr.innerHTML){
-            div.appendChild(salaryErr)
-        }else{
-            return salaryInput.value
-        }
-    }
+//     //salary:
+//     const salaryHead = document.createElement("h3")
+//     salaryHead.innerHTML = "Desired Salay"
+//     salaryHead.style.margin = '5px'
+//     const salaryInput = document.createElement("input")
+//     salaryInput.type = 'number'
+//             form.appendChild(salaryHead)
+//             form.appendChild(salaryInput)
+//     const getSalary  = function(){
+//         const salaryErr = document.createElement("h4")
+//         salaryErr.style.color = 'red' 
 
-    //birthday:
-    //  ***DETERMINE INPUT: DATE***
-    const bDayHead = document.createElement("h2")
-    bDayHead.innerHTML = "Birthday Date"
-    const birthdayInput = document.createElement("input")
-            div.appendChild(bDayHead)
-            div.appendChild(birthdayInput)
-    const getBirthday = function(){
-        const birthdayErr = document.createElement("h4")
-        birthdayErr.style.color = 'red'
-        if(!birthdayInput.value){
-            birthdayErr.innerHTML = "Birthday can't be empty"
-        }
-        if(birthdayErr.innerHTML){
-            div.appendChild(birthdayErr)
-        }else{
-            return birthdayInput.value
-        }
-    }
+//         //managing errors:
+//         if (salaryInput.value <10000 || salaryInput <16000){
+//             salaryErr.innerHTML = "Salary should be between 10,000 and 16,000"
+//         }
 
-    //phone:
-    const phoneInput = document.createElement("input")
+//         //managing return value
+//         if(salaryErr.innerHTML){
+//             errors.appendChild(salaryErr)
+//             return
+//         }else{
+//             return salaryInput.value
+//         }
+//     }
 
-    //creating button element
-    const submit = document.createElement("button")
-    submit.innerHTML = "Submit"
-    div.appendChild(submit)
+//     //birthday:
+//     const bDayHead = document.createElement("h3")
+//     bDayHead.innerHTML = "Birthday Date"
+//     bDayHead.style.margin = '5px'
+//     const birthdayInput = document.createElement("input")
+//     birthdayInput.type = "date"
+//             form.appendChild(bDayHead)
+//             form.appendChild(birthdayInput)
+//     const getBirthday = function(){
+//         const birthdayErr = document.createElement("h4")
+//         birthdayErr.style.color = 'red'
 
-    submit.onclick = function (){
-        const name = getName()
-        // const name = nameInput.value
-        const salary = getSalary()
-        const birthday = getBirthday()
-        const phone = phoneInput.value
-        console.log("name:",name)
-        console.log("salary:", salary)
-        console.log("birthday", birthday)
-    }
+//         //managing errors:
+//         if(!birthdayInput.value){
+//             birthdayErr.innerHTML = "Birthday can't be empty"
+//         }
+
+//         //managing return value:
+//         if(birthdayErr.innerHTML){
+//             errors.appendChild(birthdayErr)
+//             return
+//         }else{
+//             return birthdayInput.value
+//         }
+//     }
+
+//     //phone:
+//     const phoneHead = document.createElement("h3")
+//     phoneHead.innerHTML = "Phone Number"
+//     phoneHead.style.margin = '5px'
+//     const phoneInput = document.createElement("input")
+//     phoneInput.type = 'number'
+//     phoneInput.length = 10;
+//                 form.appendChild(phoneHead)
+//                 form.appendChild(phoneInput)
+//     const getPhone = function(){
+//         const phoneErr = document.createElement("h4")
+//         phoneErr.style.color = 'red'
+
+//         //managing errors:
+//         if (phoneInput.value.length <10){
+//             phoneErr.innerHTML = "Phone number is too short"
+//         }else if (phoneInput.value.length > 10){
+//             phoneErr.innerHTML = "Phone number is too long"
+//         }
+
+//         //managing return value:
+//         if(phoneErr.innerHTML){
+//             errors.appendChild(phoneErr)
+//             return
+//         }else{
+//             return phoneInput.value
+//         }
+//     }
+
+//     //creating button element
+//     const submit = document.createElement("button")
+//     submit.innerHTML = "Submit"
+//     form.appendChild(submit)
+
+//     // onclick listener for 'submit' button
+//     submit.onclick = function (){
+//         // cleaning errors' div so they won't pile up:
+//         errors.innerHTML = ''
+
+//         // getting the data
+//         const name = getName()
+//         const salary = getSalary()
+//         const birthday = getBirthday()
+//         const phone = getPhone()
+        
+//         //creating summary to show:
+//         let sum = document.createElement('h4')
+//         sum.style.margin = '5px'
+
+//         //managing summary/errors display
+//         if(name&&salary&&birthday&&phone){
+//             form.innerHTML = '' //EXTENTION EXERCISE
+//             sum.innerHTML = (`Welcome,${name}, <br> Here is your information: <br><br> desired salary: ${salary}, <br> birthday: ${birthday}, <br> phone number: ${phone} `)
+//             form.appendChild(sum)
+//         }
+
+//     }

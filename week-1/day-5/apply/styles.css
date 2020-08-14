@@ -9,3 +9,9 @@
     height : 48px;
     margin : 10px;
 }
+
+#form{
+    background-color:lightblue;
+    display:inline-block;
+    padding: 10px;
+}
