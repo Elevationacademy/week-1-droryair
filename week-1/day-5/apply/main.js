@@ -74,27 +74,36 @@ for (let i=0;i<6;i++){
     bs.backgroundColor = randColor()
     // onmouseover listener for each box
     boxElem.onmouseover = function(){
-        bs.backgroundColor = randColor()
-        checkColors()
+        bs.backgroundColor =  'black'   //randColor()
+        checkColors2()
     }
     container.appendChild(boxElem)
 }
 
 
+const getObjColor = function(str){
+    return document.getElementById(str).style.backgroundColor
+}
+
 // EXTENSION EXERCISE
-function checkColors(){
-    if (document.getElementById('box1').style.backgroundColor == document.getElementById('box2').style.backgroundColor){
-        if(document.getElementById('box2').style.backgroundColor ==document.getElementById('box3').style.backgroundColor){
-            if(document.getElementById('box3').style.backgroundColor== document.getElementById('box4').style.backgroundColor){
-                if( document.getElementById('box4').style.backgroundColor==document.getElementById('box5').style.backgroundColor){
-                    if (document.getElementById('box5').style.backgroundColor==document.getElementById('box6').style.backgroundColor){
-                        const congrats = document.createElement('h3')
-                        congrats.innerHTML = "Nice job!"
-                        container.appendChild(congrats)
-                        return
-                    }
-                }
-            }
+
+function checkColors2(){
+    let identifier = 0 // checks the number of boxes witht the same color
+    for (let i=2;i<=6;i++){
+
+        // comparing a box's color to the color of the box before 
+        if (getObjColor('box'+i) !== getObjColor('box'+(i-1))){
+            identifier = 0;
+        }else{
+            identifier += 1
+        }
+
+        //handling the output
+        if (identifier >=5){
+            const congrats = document.createElement('h3')
+            congrats.innerHTML = "Nice job!"
+            container.appendChild(congrats)
+            return
         }
     }
 }
