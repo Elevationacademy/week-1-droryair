@@ -1,0 +1,181 @@
+
+/* TASK 1 */
+/* #parent {
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+    position: relative;
+}
+
+.box {
+    background-color: red;
+}
+
+#box1 {
+    margin-left: 50px;
+    width:20px;
+    height:300px;
+}
+
+#box2 {
+    top: 50px;
+    height:20px;
+    width:300px;
+    position:absolute;
+
+} */
+
+
+
+
+/* TASK 2 */
+/* #parent {
+    background-color: purple;
+    width: 230px;
+    height: 100px;
+    position: relative;
+}
+
+.box {
+    background-color: grey;
+    width: 20px;
+}
+
+#box1 {
+    height:20px;
+    position: absolute;
+    bottom:5px;
+    left: 10px;
+}
+
+#box2 {
+    height:60px;
+    position:absolute;    
+    bottom:5px;
+    left: 40px;
+}
+
+#box3 {
+    height:80px;
+    position:absolute; 
+    bottom:5px;
+    left: 70px;   
+}
+#box4 {
+    height:70px;
+    position:absolute;    
+    bottom:5px;
+    left: 100px;
+}
+#box5 {
+    height:60px;
+    position:absolute;    
+    bottom:5px;
+    left: 130px;
+}
+#box6 {
+    height:40px;
+    position:absolute;    
+    bottom:5px;
+    left: 160px;
+}
+#box7 {
+    height:20px;
+    position:absolute;    
+    bottom:5px;
+    right:5px;
+} */
+
+
+
+
+/* TASK 3 */
+/* #parent {
+    background-color: silver;
+    width: 300px;
+    height: 200px;
+    position: absolute;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+.box {
+    width:300px;
+}
+
+#box1 {
+    background-color: red;
+    height:150px;
+    margin-top:50px;
+    position:absolute;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+#box2 {
+    background-color: white;
+    margin-left: 65px;
+    height:150px;
+    position: relative;
+    width:170px;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+} */
+
+
+
+/* TASK 4 */
+#parent {
+    background-color: black;
+    width: 420px;
+    height: 215px;
+    position: relative;
+    display: inline-block;
+}
+
+ .box {
+    background-color:#66320E;
+    width: 100px;
+    height: 100px;
+    margin:2px;
+    position: absolute;
+} 
+
+#box1 {
+
+ }
+
+#box2 { 
+    left: 105px;
+}
+
+#box3 {
+    left: 210px;
+}
+#box4 {   
+    left: 315px;
+}
+
+/* here goes the red line */
+
+.divider {
+    background-color: darkred;
+    height : 5px;
+    width : 440 px;
+    margin-top :105px;
+}
+
+.bottomline{
+    bottom:0;
+}
+
+#box5 {   
+
+}
+#box6 {
+    left: 105px;
+}
+
+#box7 { 
+    left: 210px;
+}
